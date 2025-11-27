@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Number13 {
     public static void main(String[] args) {
         int myNumbers [][] = new int[3][];
@@ -9,7 +7,7 @@ public class Number13 {
 
 
         for (int i=0; i<myNumbers.length; i++) {
-            System.out.print(Arrays.toString(myNumbers[i]));
+            System.out.println("Length of row " + (i+1) + ": " + myNumbers[i].length);
         }
     }
 }
