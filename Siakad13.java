@@ -4,30 +4,34 @@ public class Siakad13 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[][] score = new int[4][3];
+        System.out.print("Enter number of students: ");
+        int students = sc.nextInt();
+        System.out.print("Enter number of courses: ");
+        int courses = sc.nextInt();
 
-    
-        for (int i = 0; i < score.length; i++) {
-            System.out.println("Enter scores for student #" + (i + 1));
+        int[][] score = new int[students][courses];
 
-            double sumForEachStudent = 0;
-            for (int j = 0; j < score[i].length; j++) {
+        for (int i = 0; i < students; i++) {
+            System.out.println("\nEnter scores for student #" + (i + 1));
+            double sumStudent = 0;
+
+            for (int j = 0; j < courses; j++) {
                 System.out.print("Course #" + (j + 1) + " score: ");
                 score[i][j] = sc.nextInt();
-                sumForEachStudent += score[i][j];
+                sumStudent += score[i][j];
             }
 
-            System.out.println("Average score: " + (sumForEachStudent / 3));
+            System.out.println("Average score: " + (sumStudent / courses));
         }
 
-        for (int j = 0; j < 3; j++) {
-            double sumForEachCourse = 0;
-
-            for (int i = 0; i < 4; i++) {
-                sumForEachCourse += score[i][j];
+        System.out.println("\n--- Average Score Per Course ---");
+        for (int j = 0; j < courses; j++) {
+            double sumCourse = 0;
+            for (int i = 0; i < students; i++) {
+                sumCourse += score[i][j];
             }
-
-            System.out.println("Course #" + (j + 1) + ": " + (sumForEachCourse / 4));
+            System.out.println("Course #" + (j + 1) + ": " + (sumCourse / students));
         }
     }
 }
+
